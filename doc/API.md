@@ -112,7 +112,7 @@ function (json) {
 A function to be called if the request fails. The function is passed two arguments: The `xOptions` object and a string describing the type of error that occurred. Possible values for the second argument are `"error"` (the request finished but the JSONP callback was not called) or `"timeout"`.
 
 ```js
-function (xOptions, textStatus) {
+function (xOptions, textStatus, json, httpStatus, httpHeaders) {
   this; // the xOptions object or xOptions.context if provided
 }
 ```
@@ -128,7 +128,7 @@ Lifetime of this cache is page-based which means it gets erased at each page rel
 A function to be called if the request succeeds. The function gets passed three arguments: The JSON object returned from the server, a string describing the status (always `"success"`) and, *_as of version 2.4.0_* the `xOptions` object.
 
 ```js
-function (json, textStatus, xOptions) {
+function (json, textStatus, xOptions, httpStatus, httpHeaders) {
   this; // the xOptions object or xOptions.context if provided
 }
 ```
